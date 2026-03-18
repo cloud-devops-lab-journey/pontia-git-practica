@@ -1,0 +1,16 @@
+name: Demo manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: "Introduce un mensaje"
+        required: true
+        type: string
+
+jobs:
+  imprimir-mensaje:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje
+        run: echo "${{ github.event.inputs.mensaje }}"
